@@ -1,0 +1,440 @@
+{"level":"warn","message":"[FIREBASE] firebase-key.json not found. Push notifications will be logged to console (Mocked).","timestamp":"2026-06-17 11:15:40"}
+{"level":"info","message":"[SYSTEM] SMMTor Node.js API Gateway running in development mode on port 3000","timestamp":"2026-06-17 11:15:40"}
+{"level":"info","message":"[CRON_SERVICE] Sync engine scheduler initialized.","timestamp":"2026-06-17 11:15:40"}
+{"level":"error","message":"Database Query Error: ","sql":"SELECT o.order_id, o.api_orderid, o.order_status, o.client_id, o.order_api, a.api_key, a.api_url \n       FROM orders o \n       INNER JOIN service_api a ON a.id = o.order_api\n       WHERE o.order_api != 0 \n       AND o.order_status IN ('pending', 'processing', 'inprogress')","timestamp":"2026-06-17 11:15:40"}
+{"level":"error","message":"[CRON_SERVICE] Order status sync error: ","timestamp":"2026-06-17 11:15:40"}
+{"level":"error","message":"Pool keep-alive check failed: ","timestamp":"2026-06-17 11:16:10"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'wintersm_winterpro'@'localhost' (using password: YES)","timestamp":"2026-06-17 11:16:40"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'wintersm_winterpro'@'localhost' (using password: YES)","timestamp":"2026-06-17 11:17:10"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'wintersm_winterpro'@'localhost' (using password: YES)","timestamp":"2026-06-17 11:17:40"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'wintersm_winterpro'@'localhost' (using password: YES)","timestamp":"2026-06-17 11:18:10"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'wintersm_winterpro'@'localhost' (using password: YES)","timestamp":"2026-06-17 11:18:40"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'wintersm_winterpro'@'localhost' (using password: YES)","timestamp":"2026-06-17 11:19:10"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'wintersm_winterpro'@'localhost' (using password: YES)","timestamp":"2026-06-17 11:19:40"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'wintersm_winterpro'@'localhost' (using password: YES)","timestamp":"2026-06-17 11:20:10"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'wintersm_winterpro'@'localhost' (using password: YES)","timestamp":"2026-06-17 11:20:40"}
+{"level":"error","message":"Database Query Error: Access denied for user 'wintersm_winterpro'@'localhost' (using password: YES)","sql":"SELECT o.order_id, o.api_orderid, o.order_status, o.client_id, o.order_api, a.api_key, a.api_url \n       FROM orders o \n       INNER JOIN service_api a ON a.id = o.order_api\n       WHERE o.order_api != 0 \n       AND o.order_status IN ('pending', 'processing', 'inprogress')","timestamp":"2026-06-17 11:20:40"}
+{"level":"error","message":"[CRON_SERVICE] Order status sync error: Access denied for user 'wintersm_winterpro'@'localhost' (using password: YES)","timestamp":"2026-06-17 11:20:40"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'wintersm_winterpro'@'localhost' (using password: YES)","timestamp":"2026-06-17 11:21:10"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'wintersm_winterpro'@'localhost' (using password: YES)","timestamp":"2026-06-17 11:21:40"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'wintersm_winterpro'@'localhost' (using password: YES)","timestamp":"2026-06-17 11:22:10"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'wintersm_winterpro'@'localhost' (using password: YES)","timestamp":"2026-06-17 11:22:40"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'wintersm_winterpro'@'localhost' (using password: YES)","timestamp":"2026-06-17 11:23:10"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'wintersm_winterpro'@'localhost' (using password: YES)","timestamp":"2026-06-17 11:23:40"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'wintersm_winterpro'@'localhost' (using password: YES)","timestamp":"2026-06-17 11:24:10"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'wintersm_winterpro'@'localhost' (using password: YES)","timestamp":"2026-06-17 11:24:40"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'wintersm_winterpro'@'localhost' (using password: YES)","timestamp":"2026-06-17 11:25:10"}
+{"level":"error","message":"Database Query Error: Access denied for user 'wintersm_winterpro'@'localhost' (using password: YES)","sql":"SELECT o.order_id, o.api_orderid, o.order_status, o.client_id, o.order_api, a.api_key, a.api_url \n       FROM orders o \n       INNER JOIN service_api a ON a.id = o.order_api\n       WHERE o.order_api != 0 \n       AND o.order_status IN ('pending', 'processing', 'inprogress')","timestamp":"2026-06-17 11:25:40"}
+{"level":"error","message":"[CRON_SERVICE] Order status sync error: Access denied for user 'wintersm_winterpro'@'localhost' (using password: YES)","timestamp":"2026-06-17 11:25:40"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'wintersm_winterpro'@'localhost' (using password: YES)","timestamp":"2026-06-17 11:25:40"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'wintersm_winterpro'@'localhost' (using password: YES)","timestamp":"2026-06-17 11:26:11"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'wintersm_winterpro'@'localhost' (using password: YES)","timestamp":"2026-06-17 11:26:41"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'wintersm_winterpro'@'localhost' (using password: YES)","timestamp":"2026-06-17 11:27:11"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'wintersm_winterpro'@'localhost' (using password: YES)","timestamp":"2026-06-17 11:27:41"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'wintersm_winterpro'@'localhost' (using password: YES)","timestamp":"2026-06-17 11:28:11"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'wintersm_winterpro'@'localhost' (using password: YES)","timestamp":"2026-06-17 11:28:41"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'wintersm_winterpro'@'localhost' (using password: YES)","timestamp":"2026-06-17 11:29:11"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'wintersm_winterpro'@'localhost' (using password: YES)","timestamp":"2026-06-17 11:29:41"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'wintersm_winterpro'@'localhost' (using password: YES)","timestamp":"2026-06-17 11:30:11"}
+{"level":"error","message":"Database Query Error: Access denied for user 'wintersm_winterpro'@'localhost' (using password: YES)","sql":"SELECT o.order_id, o.api_orderid, o.order_status, o.client_id, o.order_api, a.api_key, a.api_url \n       FROM orders o \n       INNER JOIN service_api a ON a.id = o.order_api\n       WHERE o.order_api != 0 \n       AND o.order_status IN ('pending', 'processing', 'inprogress')","timestamp":"2026-06-17 11:30:40"}
+{"level":"error","message":"[CRON_SERVICE] Order status sync error: Access denied for user 'wintersm_winterpro'@'localhost' (using password: YES)","timestamp":"2026-06-17 11:30:40"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'wintersm_winterpro'@'localhost' (using password: YES)","timestamp":"2026-06-17 11:30:41"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'wintersm_winterpro'@'localhost' (using password: YES)","timestamp":"2026-06-17 11:31:11"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'wintersm_winterpro'@'localhost' (using password: YES)","timestamp":"2026-06-17 11:31:41"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'wintersm_winterpro'@'localhost' (using password: YES)","timestamp":"2026-06-17 11:32:11"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'wintersm_winterpro'@'localhost' (using password: YES)","timestamp":"2026-06-17 11:32:41"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'wintersm_winterpro'@'localhost' (using password: YES)","timestamp":"2026-06-17 11:33:11"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'wintersm_winterpro'@'localhost' (using password: YES)","timestamp":"2026-06-17 11:33:41"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'wintersm_winterpro'@'localhost' (using password: YES)","timestamp":"2026-06-17 11:34:11"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'wintersm_winterpro'@'localhost' (using password: YES)","timestamp":"2026-06-17 11:34:41"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'wintersm_winterpro'@'localhost' (using password: YES)","timestamp":"2026-06-17 11:35:11"}
+{"level":"error","message":"Database Query Error: Access denied for user 'wintersm_winterpro'@'localhost' (using password: YES)","sql":"SELECT o.order_id, o.api_orderid, o.order_status, o.client_id, o.order_api, a.api_key, a.api_url \n       FROM orders o \n       INNER JOIN service_api a ON a.id = o.order_api\n       WHERE o.order_api != 0 \n       AND o.order_status IN ('pending', 'processing', 'inprogress')","timestamp":"2026-06-17 11:35:40"}
+{"level":"error","message":"[CRON_SERVICE] Order status sync error: Access denied for user 'wintersm_winterpro'@'localhost' (using password: YES)","timestamp":"2026-06-17 11:35:40"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'wintersm_winterpro'@'localhost' (using password: YES)","timestamp":"2026-06-17 11:35:41"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'wintersm_winterpro'@'localhost' (using password: YES)","timestamp":"2026-06-17 11:36:11"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'wintersm_winterpro'@'localhost' (using password: YES)","timestamp":"2026-06-17 11:36:41"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'wintersm_winterpro'@'localhost' (using password: YES)","timestamp":"2026-06-17 11:37:11"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'wintersm_winterpro'@'localhost' (using password: YES)","timestamp":"2026-06-17 11:37:41"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'wintersm_winterpro'@'localhost' (using password: YES)","timestamp":"2026-06-17 11:38:11"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'wintersm_winterpro'@'localhost' (using password: YES)","timestamp":"2026-06-17 11:38:41"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'wintersm_winterpro'@'localhost' (using password: YES)","timestamp":"2026-06-17 11:39:11"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'wintersm_winterpro'@'localhost' (using password: YES)","timestamp":"2026-06-17 11:39:41"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'wintersm_winterpro'@'localhost' (using password: YES)","timestamp":"2026-06-17 11:40:11"}
+{"level":"error","message":"Database Query Error: Access denied for user 'wintersm_winterpro'@'localhost' (using password: YES)","sql":"SELECT o.order_id, o.api_orderid, o.order_status, o.client_id, o.order_api, a.api_key, a.api_url \n       FROM orders o \n       INNER JOIN service_api a ON a.id = o.order_api\n       WHERE o.order_api != 0 \n       AND o.order_status IN ('pending', 'processing', 'inprogress')","timestamp":"2026-06-17 11:40:40"}
+{"level":"error","message":"[CRON_SERVICE] Order status sync error: Access denied for user 'wintersm_winterpro'@'localhost' (using password: YES)","timestamp":"2026-06-17 11:40:40"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'wintersm_winterpro'@'localhost' (using password: YES)","timestamp":"2026-06-17 11:40:41"}
+{"level":"warn","message":"[FIREBASE] firebase-key.json not found. Push notifications will be logged to console (Mocked).","timestamp":"2026-06-17 11:51:54"}
+{"level":"info","message":"[SYSTEM] SMMTor Node.js API Gateway running in development mode on port 3000","timestamp":"2026-06-17 11:51:54"}
+{"level":"info","message":"[CRON_SERVICE] Sync engine scheduler initialized.","timestamp":"2026-06-17 11:51:54"}
+{"level":"info","message":"127.0.0.1 - - [17/Jun/2026:05:51:54 +0000] \"GET / HTTP/1.1\" 200 215 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36\"","timestamp":"2026-06-17 11:51:54"}
+{"level":"error","message":"Database Query Error: Access denied for user 'root'@'localhost' (using password: NO)","sql":"SELECT o.order_id, o.api_orderid, o.order_status, o.client_id, o.order_api, a.api_key, a.api_url \n       FROM orders o \n       INNER JOIN service_api a ON a.id = o.order_api\n       WHERE o.order_api != 0 \n       AND o.order_status IN ('pending', 'processing', 'inprogress')","timestamp":"2026-06-17 11:51:54"}
+{"level":"error","message":"[CRON_SERVICE] Order status sync error: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 11:51:54"}
+{"level":"warn","message":"[FIREBASE] firebase-key.json not found. Push notifications will be logged to console (Mocked).","timestamp":"2026-06-17 11:51:58"}
+{"level":"info","message":"[SYSTEM] SMMTor Node.js API Gateway running in development mode on port 3000","timestamp":"2026-06-17 11:51:58"}
+{"level":"info","message":"[CRON_SERVICE] Sync engine scheduler initialized.","timestamp":"2026-06-17 11:51:58"}
+{"level":"info","message":"127.0.0.1 - - [17/Jun/2026:05:51:58 +0000] \"GET / HTTP/1.1\" 200 215 \"-\" \"Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.2.13) Gecko/20101209 CentOS/3.6-2.el5.centos Firefox/3.6.13\"","timestamp":"2026-06-17 11:51:58"}
+{"level":"error","message":"Database Query Error: Access denied for user 'root'@'localhost' (using password: NO)","sql":"SELECT o.order_id, o.api_orderid, o.order_status, o.client_id, o.order_api, a.api_key, a.api_url \n       FROM orders o \n       INNER JOIN service_api a ON a.id = o.order_api\n       WHERE o.order_api != 0 \n       AND o.order_status IN ('pending', 'processing', 'inprogress')","timestamp":"2026-06-17 11:51:58"}
+{"level":"error","message":"[CRON_SERVICE] Order status sync error: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 11:51:58"}
+{"level":"info","message":"127.0.0.1 - - [17/Jun/2026:05:52:15 +0000] \"GET / HTTP/1.1\" 200 215 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36\"","timestamp":"2026-06-17 11:52:15"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 11:52:28"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 11:52:58"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 11:53:28"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 11:53:58"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 11:54:28"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 11:54:58"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 11:55:28"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 11:55:58"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 11:56:28"}
+{"level":"error","message":"Database Query Error: Access denied for user 'root'@'localhost' (using password: NO)","sql":"SELECT o.order_id, o.api_orderid, o.order_status, o.client_id, o.order_api, a.api_key, a.api_url \n       FROM orders o \n       INNER JOIN service_api a ON a.id = o.order_api\n       WHERE o.order_api != 0 \n       AND o.order_status IN ('pending', 'processing', 'inprogress')","timestamp":"2026-06-17 11:56:58"}
+{"level":"error","message":"[CRON_SERVICE] Order status sync error: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 11:56:58"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 11:56:58"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 11:57:28"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 11:57:58"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 11:58:28"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 11:58:58"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 11:59:28"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 11:59:58"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 12:00:28"}
+{"level":"info","message":"127.0.0.1 - - [17/Jun/2026:06:00:41 +0000] \"GET /robots.txt HTTP/1.1\" 404 30 \"-\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36; compatible; OAI-SearchBot/1.4; robots.txt; +https://openai.com/searchbot\"","timestamp":"2026-06-17 12:00:41"}
+{"level":"info","message":"127.0.0.1 - - [17/Jun/2026:06:00:42 +0000] \"GET / HTTP/1.1\" 200 215 \"-\" \"Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; GPTBot/1.4; +https://openai.com/gptbot)\"","timestamp":"2026-06-17 12:00:42"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 12:00:58"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 12:01:28"}
+{"level":"error","message":"Database Query Error: Access denied for user 'root'@'localhost' (using password: NO)","sql":"SELECT o.order_id, o.api_orderid, o.order_status, o.client_id, o.order_api, a.api_key, a.api_url \n       FROM orders o \n       INNER JOIN service_api a ON a.id = o.order_api\n       WHERE o.order_api != 0 \n       AND o.order_status IN ('pending', 'processing', 'inprogress')","timestamp":"2026-06-17 12:01:58"}
+{"level":"error","message":"[CRON_SERVICE] Order status sync error: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 12:01:58"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 12:01:58"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 12:02:28"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 12:02:58"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 12:03:28"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 12:03:58"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 12:04:28"}
+{"level":"warn","message":"[FIREBASE] firebase-key.json not found. Push notifications will be logged to console (Mocked).","timestamp":"2026-06-17 12:04:51"}
+{"level":"info","message":"[SYSTEM] SMMTor Node.js API Gateway running in development mode on port 3000","timestamp":"2026-06-17 12:04:51"}
+{"level":"info","message":"[CRON_SERVICE] Sync engine scheduler initialized.","timestamp":"2026-06-17 12:04:51"}
+{"level":"info","message":"127.0.0.1 - - [17/Jun/2026:06:04:51 +0000] \"GET /favicon.ico HTTP/1.1\" 404 30 \"http://api.smmtor.com/cgi-sys/defaultwebpage.cgi\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36\"","timestamp":"2026-06-17 12:04:51"}
+{"level":"info","message":"[CRON_SERVICE] Syncing 1 active orders...","timestamp":"2026-06-17 12:04:51"}
+{"level":"error","message":"Database Query Error: Unknown column 'fcm_token' in 'SELECT'","params":[862],"sql":"SELECT fcm_token FROM clients WHERE client_id = ? LIMIT 1","timestamp":"2026-06-17 12:04:52"}
+{"data":{"category":"order","order_id":"490879"},"level":"info","message":"[FIREBASE MOCK] Push target \"all\": [Order Status Updated] - Your SMM order #490879 has been updated to \"Canceled\".","timestamp":"2026-06-17 12:04:52"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 12:04:58"}
+{"level":"info","message":"127.0.0.1 - - [17/Jun/2026:06:05:25 +0000] \"GET / HTTP/1.1\" 200 215 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36\"","timestamp":"2026-06-17 12:05:25"}
+{"level":"info","message":"127.0.0.1 - - [17/Jun/2026:06:05:26 +0000] \"GET /favicon.ico HTTP/1.1\" 404 30 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36\"","timestamp":"2026-06-17 12:05:26"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 12:05:28"}
+{"level":"info","message":"127.0.0.1 - - [17/Jun/2026:06:05:28 +0000] \"GET / HTTP/1.1\" 200 215 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36\"","timestamp":"2026-06-17 12:05:28"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 12:05:58"}
+{"level":"info","message":"127.0.0.1 - - [17/Jun/2026:06:05:59 +0000] \"GET / HTTP/1.1\" 200 215 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36\"","timestamp":"2026-06-17 12:05:59"}
+{"level":"info","message":"127.0.0.1 - - [17/Jun/2026:06:05:59 +0000] \"GET /favicon.ico HTTP/1.1\" 404 30 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36\"","timestamp":"2026-06-17 12:05:59"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 12:06:28"}
+{"level":"error","message":"Database Query Error: Access denied for user 'root'@'localhost' (using password: NO)","sql":"SELECT o.order_id, o.api_orderid, o.order_status, o.client_id, o.order_api, a.api_key, a.api_url \n       FROM orders o \n       INNER JOIN service_api a ON a.id = o.order_api\n       WHERE o.order_api != 0 \n       AND o.order_status IN ('pending', 'processing', 'inprogress')","timestamp":"2026-06-17 12:06:58"}
+{"level":"error","message":"[CRON_SERVICE] Order status sync error: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 12:06:58"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 12:06:58"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 12:07:28"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 12:07:58"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 12:08:28"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 12:08:58"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 12:09:28"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 12:09:58"}
+{"level":"info","message":"[LEGACY ROUTER] Translated action \"app_config\" to REST path \"/api/v2/support/config?action=app_config\" (GET)","timestamp":"2026-06-17 12:10:20"}
+{"level":"error","message":"Database Query Error: Access denied for user 'root'@'localhost' (using password: NO)","sql":"SELECT mobile_app_secret FROM admins WHERE admin_type = '3' LIMIT 1","timestamp":"2026-06-17 12:10:20"}
+{"level":"info","message":"127.0.0.1 - - [17/Jun/2026:06:10:20 +0000] \"GET /api/v2?action=app_config HTTP/1.1\" 403 29 \"http://localhost:58929/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36\"","timestamp":"2026-06-17 12:10:20"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 12:10:28"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 12:10:58"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 12:11:28"}
+{"level":"info","message":"[LEGACY ROUTER] Translated action \"login\" to REST path \"/api/v2/auth/login?action=login\" (POST)","timestamp":"2026-06-17 12:11:36"}
+{"level":"error","message":"Database Query Error: Access denied for user 'root'@'localhost' (using password: NO)","sql":"SELECT mobile_app_secret FROM admins WHERE admin_type = '3' LIMIT 1","timestamp":"2026-06-17 12:11:36"}
+{"level":"info","message":"127.0.0.1 - - [17/Jun/2026:06:11:36 +0000] \"POST /api/v2?action=login HTTP/1.1\" 403 29 \"http://localhost:58929/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36\"","timestamp":"2026-06-17 12:11:36"}
+{"level":"info","message":"[LEGACY ROUTER] Translated action \"login\" to REST path \"/api/v2/auth/login?action=login\" (POST)","timestamp":"2026-06-17 12:11:38"}
+{"level":"error","message":"Database Query Error: Access denied for user 'root'@'localhost' (using password: NO)","sql":"SELECT mobile_app_secret FROM admins WHERE admin_type = '3' LIMIT 1","timestamp":"2026-06-17 12:11:38"}
+{"level":"info","message":"127.0.0.1 - - [17/Jun/2026:06:11:38 +0000] \"POST /api/v2?action=login HTTP/1.1\" 403 29 \"http://localhost:58929/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36\"","timestamp":"2026-06-17 12:11:38"}
+{"level":"info","message":"[LEGACY ROUTER] Translated action \"login\" to REST path \"/api/v2/auth/login?action=login\" (POST)","timestamp":"2026-06-17 12:11:39"}
+{"level":"error","message":"Database Query Error: Access denied for user 'root'@'localhost' (using password: NO)","sql":"SELECT mobile_app_secret FROM admins WHERE admin_type = '3' LIMIT 1","timestamp":"2026-06-17 12:11:39"}
+{"level":"info","message":"127.0.0.1 - - [17/Jun/2026:06:11:39 +0000] \"POST /api/v2?action=login HTTP/1.1\" 403 29 \"http://localhost:58929/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36\"","timestamp":"2026-06-17 12:11:39"}
+{"level":"info","message":"[LEGACY ROUTER] Translated action \"login\" to REST path \"/api/v2/auth/login?action=login\" (POST)","timestamp":"2026-06-17 12:11:40"}
+{"level":"error","message":"Database Query Error: Access denied for user 'root'@'localhost' (using password: NO)","sql":"SELECT mobile_app_secret FROM admins WHERE admin_type = '3' LIMIT 1","timestamp":"2026-06-17 12:11:40"}
+{"level":"info","message":"127.0.0.1 - - [17/Jun/2026:06:11:40 +0000] \"POST /api/v2?action=login HTTP/1.1\" 403 29 \"http://localhost:58929/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36\"","timestamp":"2026-06-17 12:11:40"}
+{"level":"info","message":"[LEGACY ROUTER] Translated action \"login\" to REST path \"/api/v2/auth/login?action=login\" (POST)","timestamp":"2026-06-17 12:11:41"}
+{"level":"error","message":"Database Query Error: Access denied for user 'root'@'localhost' (using password: NO)","sql":"SELECT mobile_app_secret FROM admins WHERE admin_type = '3' LIMIT 1","timestamp":"2026-06-17 12:11:41"}
+{"level":"info","message":"127.0.0.1 - - [17/Jun/2026:06:11:41 +0000] \"POST /api/v2?action=login HTTP/1.1\" 403 29 \"http://localhost:58929/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36\"","timestamp":"2026-06-17 12:11:41"}
+{"level":"info","message":"[LEGACY ROUTER] Translated action \"login\" to REST path \"/api/v2/auth/login?action=login\" (POST)","timestamp":"2026-06-17 12:11:42"}
+{"level":"error","message":"Database Query Error: Access denied for user 'root'@'localhost' (using password: NO)","sql":"SELECT mobile_app_secret FROM admins WHERE admin_type = '3' LIMIT 1","timestamp":"2026-06-17 12:11:42"}
+{"level":"info","message":"127.0.0.1 - - [17/Jun/2026:06:11:42 +0000] \"POST /api/v2?action=login HTTP/1.1\" 403 29 \"http://localhost:58929/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36\"","timestamp":"2026-06-17 12:11:42"}
+{"level":"info","message":"[LEGACY ROUTER] Translated action \"login\" to REST path \"/api/v2/auth/login?action=login\" (POST)","timestamp":"2026-06-17 12:11:43"}
+{"level":"error","message":"Database Query Error: Access denied for user 'root'@'localhost' (using password: NO)","sql":"SELECT mobile_app_secret FROM admins WHERE admin_type = '3' LIMIT 1","timestamp":"2026-06-17 12:11:43"}
+{"level":"info","message":"127.0.0.1 - - [17/Jun/2026:06:11:43 +0000] \"POST /api/v2?action=login HTTP/1.1\" 403 29 \"http://localhost:58929/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36\"","timestamp":"2026-06-17 12:11:43"}
+{"level":"info","message":"[LEGACY ROUTER] Translated action \"login\" to REST path \"/api/v2/auth/login?action=login\" (POST)","timestamp":"2026-06-17 12:11:44"}
+{"level":"error","message":"Database Query Error: Access denied for user 'root'@'localhost' (using password: NO)","sql":"SELECT mobile_app_secret FROM admins WHERE admin_type = '3' LIMIT 1","timestamp":"2026-06-17 12:11:44"}
+{"level":"info","message":"127.0.0.1 - - [17/Jun/2026:06:11:44 +0000] \"POST /api/v2?action=login HTTP/1.1\" 403 29 \"http://localhost:58929/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36\"","timestamp":"2026-06-17 12:11:44"}
+{"level":"info","message":"[LEGACY ROUTER] Translated action \"login\" to REST path \"/api/v2/auth/login?action=login\" (POST)","timestamp":"2026-06-17 12:11:45"}
+{"level":"error","message":"Database Query Error: Access denied for user 'root'@'localhost' (using password: NO)","sql":"SELECT mobile_app_secret FROM admins WHERE admin_type = '3' LIMIT 1","timestamp":"2026-06-17 12:11:45"}
+{"level":"info","message":"127.0.0.1 - - [17/Jun/2026:06:11:45 +0000] \"POST /api/v2?action=login HTTP/1.1\" 403 29 \"http://localhost:58929/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36\"","timestamp":"2026-06-17 12:11:45"}
+{"level":"info","message":"[LEGACY ROUTER] Translated action \"login\" to REST path \"/api/v2/auth/login?action=login\" (POST)","timestamp":"2026-06-17 12:11:45"}
+{"level":"error","message":"Database Query Error: Access denied for user 'root'@'localhost' (using password: NO)","sql":"SELECT mobile_app_secret FROM admins WHERE admin_type = '3' LIMIT 1","timestamp":"2026-06-17 12:11:45"}
+{"level":"info","message":"127.0.0.1 - - [17/Jun/2026:06:11:45 +0000] \"POST /api/v2?action=login HTTP/1.1\" 403 29 \"http://localhost:58929/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36\"","timestamp":"2026-06-17 12:11:45"}
+{"level":"info","message":"[LEGACY ROUTER] Translated action \"login\" to REST path \"/api/v2/auth/login?action=login\" (POST)","timestamp":"2026-06-17 12:11:46"}
+{"level":"error","message":"Database Query Error: Access denied for user 'root'@'localhost' (using password: NO)","sql":"SELECT mobile_app_secret FROM admins WHERE admin_type = '3' LIMIT 1","timestamp":"2026-06-17 12:11:46"}
+{"level":"info","message":"127.0.0.1 - - [17/Jun/2026:06:11:46 +0000] \"POST /api/v2?action=login HTTP/1.1\" 403 29 \"http://localhost:58929/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36\"","timestamp":"2026-06-17 12:11:46"}
+{"level":"info","message":"[LEGACY ROUTER] Translated action \"login\" to REST path \"/api/v2/auth/login?action=login\" (POST)","timestamp":"2026-06-17 12:11:47"}
+{"level":"error","message":"Database Query Error: Access denied for user 'root'@'localhost' (using password: NO)","sql":"SELECT mobile_app_secret FROM admins WHERE admin_type = '3' LIMIT 1","timestamp":"2026-06-17 12:11:47"}
+{"level":"info","message":"127.0.0.1 - - [17/Jun/2026:06:11:47 +0000] \"POST /api/v2?action=login HTTP/1.1\" 403 29 \"http://localhost:58929/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36\"","timestamp":"2026-06-17 12:11:47"}
+{"level":"error","message":"Database Query Error: Access denied for user 'root'@'localhost' (using password: NO)","sql":"SELECT o.order_id, o.api_orderid, o.order_status, o.client_id, o.order_api, a.api_key, a.api_url \n       FROM orders o \n       INNER JOIN service_api a ON a.id = o.order_api\n       WHERE o.order_api != 0 \n       AND o.order_status IN ('pending', 'processing', 'inprogress')","timestamp":"2026-06-17 12:11:58"}
+{"level":"error","message":"[CRON_SERVICE] Order status sync error: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 12:11:58"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 12:11:58"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 12:12:28"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 12:12:58"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 12:13:28"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 12:13:58"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 12:14:28"}
+{"level":"info","message":"127.0.0.1 - - [17/Jun/2026:06:14:55 +0000] \"GET / HTTP/1.1\" 200 215 \"-\" \"Scrapy/2.16.0 (+https://scrapy.org)\"","timestamp":"2026-06-17 12:14:55"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 12:14:58"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 12:15:28"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 12:15:58"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 12:16:28"}
+{"level":"error","message":"Database Query Error: Access denied for user 'root'@'localhost' (using password: NO)","sql":"SELECT o.order_id, o.api_orderid, o.order_status, o.client_id, o.order_api, a.api_key, a.api_url \n       FROM orders o \n       INNER JOIN service_api a ON a.id = o.order_api\n       WHERE o.order_api != 0 \n       AND o.order_status IN ('pending', 'processing', 'inprogress')","timestamp":"2026-06-17 12:16:58"}
+{"level":"error","message":"[CRON_SERVICE] Order status sync error: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 12:16:58"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 12:16:58"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 12:17:28"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 12:17:58"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 12:18:28"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 12:18:58"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 12:19:29"}
+{"level":"info","message":"127.0.0.1 - - [17/Jun/2026:06:19:40 +0000] \"GET /favicon.ico HTTP/1.1\" 404 30 \"http://api.smmtor.com/cgi-sys/defaultwebpage.cgi\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36\"","timestamp":"2026-06-17 12:19:40"}
+{"level":"info","message":"127.0.0.1 - - [17/Jun/2026:06:19:41 +0000] \"GET /favicon.ico HTTP/1.1\" 404 30 \"http://api.smmtor.com/cgi-sys/defaultwebpage.cgi\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36\"","timestamp":"2026-06-17 12:19:41"}
+{"level":"info","message":"127.0.0.1 - - [17/Jun/2026:06:19:42 +0000] \"GET /favicon.ico HTTP/1.1\" 404 30 \"http://api.smmtor.com/cgi-sys/defaultwebpage.cgi\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36\"","timestamp":"2026-06-17 12:19:42"}
+{"level":"info","message":"127.0.0.1 - - [17/Jun/2026:06:19:42 +0000] \"GET /favicon.ico HTTP/1.1\" 404 30 \"http://api.smmtor.com/cgi-sys/defaultwebpage.cgi\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36\"","timestamp":"2026-06-17 12:19:42"}
+{"level":"info","message":"127.0.0.1 - - [17/Jun/2026:06:19:42 +0000] \"GET /favicon.ico HTTP/1.1\" 404 30 \"http://api.smmtor.com/cgi-sys/defaultwebpage.cgi\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36\"","timestamp":"2026-06-17 12:19:42"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 12:19:59"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 12:20:29"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 12:20:59"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 12:21:29"}
+{"level":"error","message":"Database Query Error: Access denied for user 'root'@'localhost' (using password: NO)","sql":"SELECT o.order_id, o.api_orderid, o.order_status, o.client_id, o.order_api, a.api_key, a.api_url \n       FROM orders o \n       INNER JOIN service_api a ON a.id = o.order_api\n       WHERE o.order_api != 0 \n       AND o.order_status IN ('pending', 'processing', 'inprogress')","timestamp":"2026-06-17 12:21:58"}
+{"level":"error","message":"[CRON_SERVICE] Order status sync error: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 12:21:58"}
+{"level":"error","message":"Pool keep-alive check failed: Access denied for user 'root'@'localhost' (using password: NO)","timestamp":"2026-06-17 12:21:59"}
+{"level":"info","message":"[FIREBASE] Admin SDK initialized successfully.","timestamp":"2026-06-19 15:07:45"}
+{"level":"info","message":"[SYSTEM] Verifying database connection pool...","timestamp":"2026-06-19 15:07:45"}
+{"level":"info","message":"[FIREBASE] Admin SDK initialized successfully.","timestamp":"2026-06-19 16:00:29"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:00:39"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:00:49"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:00:59"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:01:09"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:01:19"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:01:29"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:01:39"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:01:49"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:01:59"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:02:09"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:02:19"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:02:29"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:02:39"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:02:49"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:02:59"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:03:09"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:03:19"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:03:29"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:03:39"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:03:49"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:03:59"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:04:09"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:04:19"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:04:29"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:04:39"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:04:49"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:04:59"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:05:09"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:05:19"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:05:29"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:05:39"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:05:49"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:05:59"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:06:09"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:06:19"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:06:29"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:06:39"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:06:49"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:06:59"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:07:09"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:07:19"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:07:29"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:07:39"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:07:49"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:07:59"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:08:09"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:08:19"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:08:29"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:08:39"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:08:49"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:08:59"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:09:09"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:09:19"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:09:29"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:09:39"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:09:49"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:09:59"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:10:09"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:10:19"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:10:29"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:10:39"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:10:49"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:10:59"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:11:09"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:11:19"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:11:29"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:11:39"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:11:49"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:11:59"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:12:09"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:12:19"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:12:30"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:12:40"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:12:50"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:13:00"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:13:10"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:13:20"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:13:30"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:13:40"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:13:50"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:14:00"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:14:10"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:14:20"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:14:30"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:14:40"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:14:50"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:15:00"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:15:10"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:15:20"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:15:30"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:15:40"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:15:50"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:16:00"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:16:10"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:16:20"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:16:30"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:16:40"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:16:50"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:17:00"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:17:10"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:17:20"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:17:30"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:17:40"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:17:50"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:18:00"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:18:10"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:18:20"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:18:30"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:18:40"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:18:50"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:19:00"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:19:10"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:19:20"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:19:30"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:19:40"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:19:50"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:20:00"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:20:10"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:20:20"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:20:30"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:20:40"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:20:50"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:21:00"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:21:10"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:21:20"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:21:30"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:21:40"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:21:50"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:22:00"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:22:10"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:22:20"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:22:30"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:22:40"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:22:50"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:23:00"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:23:10"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:23:20"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:23:30"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:23:40"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:23:50"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:24:00"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:24:10"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:24:20"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:24:30"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:24:40"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:24:50"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:25:00"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:25:10"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:25:20"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:25:30"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:25:40"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:25:50"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:26:00"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:26:10"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:26:20"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:26:30"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 16:26:40"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 18:39:07"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 18:39:17"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 18:39:27"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 18:39:37"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 18:39:47"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 18:39:57"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 18:40:07"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 18:40:17"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 18:40:27"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 18:40:37"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 18:40:47"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 18:40:57"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 18:41:07"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 18:41:17"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 18:41:27"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 18:41:37"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 18:41:47"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 18:41:57"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 18:42:07"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 18:42:17"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 18:42:27"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 18:42:37"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 18:42:47"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 18:42:57"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 18:43:07"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 18:43:17"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 18:43:27"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 18:43:37"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 18:43:47"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 18:43:57"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 18:44:07"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 18:44:17"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 18:44:27"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 18:44:37"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 18:44:47"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 18:44:57"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 18:45:07"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 18:45:17"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 18:45:27"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 18:45:37"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 18:45:47"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 18:45:57"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 18:46:07"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 18:46:17"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 18:46:27"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 18:46:37"}
+{"level":"error","message":"Database connection check failed: ","timestamp":"2026-06-19 18:46:47"}
+{"level":"info","message":"[FIREBASE] Admin SDK initialized successfully.","timestamp":"2026-06-19 21:55:16"}
+{"level":"info","message":"[SYSTEM] Verifying database connection pool...","timestamp":"2026-06-19 21:55:16"}
+{"level":"info","message":"[SYSTEM] Database connection pool verified successfully.","timestamp":"2026-06-19 21:55:16"}
+{"level":"info","message":"[SYSTEM] SMMTor Node.js API Gateway running in development mode on port 3000","timestamp":"2026-06-19 21:55:16"}
+{"level":"info","message":"[CRON_SERVICE] Node.js cron engine initialized (replaces PHP module/run).","timestamp":"2026-06-19 21:55:16"}
+{"level":"info","message":"127.0.0.1 - - [19/Jun/2026:15:55:16 +0000] \"GET / HTTP/1.1\" 200 238 \"-\" \"Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.2.13) Gecko/20101209 CentOS/3.6-2.el5.centos Firefox/3.6.13\"","timestamp":"2026-06-19 21:55:16"}
+{"level":"info","message":"[CRON:seller-sync] API #23 (bayievi.org): provider returned 4747 services, checking 87 panel services","timestamp":"2026-06-19 21:55:18"}
+{"level":"info","message":"[CRON:seller-sync] API #26 (honestsmm.xyz): provider returned 1116 services, checking 38 panel services","timestamp":"2026-06-19 21:55:18"}
+{"level":"info","message":"[CRON:seller-sync] API #26: 1 change(s) applied.","timestamp":"2026-06-19 21:55:18"}
+{"level":"info","message":"[CRON:seller-sync] Total 1 update(s) across all providers.","timestamp":"2026-06-19 21:55:18"}
+{"level":"info","message":"127.0.0.1 - - [19/Jun/2026:15:55:22 +0000] \"GET / HTTP/1.1\" 200 238 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36\"","timestamp":"2026-06-19 21:55:22"}
+{"level":"info","message":"127.0.0.1 - - [19/Jun/2026:15:55:24 +0000] \"GET / HTTP/1.1\" 200 238 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36\"","timestamp":"2026-06-19 21:55:24"}
+{"level":"info","message":"[LEGACY ROUTER] Translated action \"update_profile\" to REST path \"/api/v2/profile/update?action=update_profile\" (POST)","timestamp":"2026-06-19 21:58:29"}
+{"level":"info","message":"127.0.0.1 - - [19/Jun/2026:15:58:29 +0000] \"POST /api/v2?action=update_profile HTTP/1.1\" 200 70 \"-\" \"Dart/3.10 (dart:io)\"","timestamp":"2026-06-19 21:58:29"}
+{"level":"info","message":"[CRON:seller-sync] API #23 (bayievi.org): provider returned 4747 services, checking 87 panel services","timestamp":"2026-06-19 21:58:48"}
+{"level":"info","message":"[CRON:seller-sync] API #26 (honestsmm.xyz): provider returned 1116 services, checking 38 panel services","timestamp":"2026-06-19 21:58:48"}
+{"level":"info","message":"127.0.0.1 - - [19/Jun/2026:15:58:50 +0000] \"GET /hg HTTP/1.1\" 404 30 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36\"","timestamp":"2026-06-19 21:58:50"}
+{"level":"info","message":"127.0.0.1 - - [19/Jun/2026:15:58:50 +0000] \"GET /favicon.ico HTTP/1.1\" 404 30 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36\"","timestamp":"2026-06-19 21:58:50"}
+{"level":"info","message":"[CRON:seller-sync] API #23 (bayievi.org): provider returned 4747 services, checking 87 panel services","timestamp":"2026-06-19 22:01:54"}
+{"level":"info","message":"[CRON:seller-sync] API #26 (honestsmm.xyz): provider returned 1116 services, checking 38 panel services","timestamp":"2026-06-19 22:01:54"}
+{"level":"info","message":"[CRON:seller-sync] API #23 (bayievi.org): provider returned 4747 services, checking 87 panel services","timestamp":"2026-06-19 22:04:48"}
+{"level":"info","message":"[CRON:seller-sync] API #26 (honestsmm.xyz): provider returned 1116 services, checking 38 panel services","timestamp":"2026-06-19 22:04:48"}
+{"level":"info","message":"[CRON:seller-sync] API #23 (bayievi.org): provider returned 4747 services, checking 87 panel services","timestamp":"2026-06-19 22:07:48"}
+{"level":"info","message":"[CRON:seller-sync] API #26 (honestsmm.xyz): provider returned 1116 services, checking 38 panel services","timestamp":"2026-06-19 22:07:48"}

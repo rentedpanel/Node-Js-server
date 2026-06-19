@@ -1,8 +1,1 @@
 node_modules/
-.env
-firebase-key.json
-*.log
-logs/
-tmp/
-.vscode/
-.idea/
