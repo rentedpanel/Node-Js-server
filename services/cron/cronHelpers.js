@@ -47,8 +47,37 @@ async function withCronLock(name, fn) {
   }
 }
 
+let cachedSiteTimezone = process.env.SITE_TIMEZONE || 'Asia/Dhaka';
+let timezoneLoadedAt = 0;
+
+/** Load panel timezone from settings (matches PHP date_default_timezone_set). */
+async function refreshSiteTimezone(force = false) {
+  const now = Date.now();
+  if (!force && now - timezoneLoadedAt < 300000) {
+    return cachedSiteTimezone;
+  }
+
+  try {
+    const settings = await getSettings();
+    if (settings.site_timezone) {
+      cachedSiteTimezone = settings.site_timezone;
+    }
+  } catch (err) {
+    logger.debug(`[CRON] Could not load site_timezone: ${err.message}`);
+  }
+
+  if (!cachedSiteTimezone) {
+    cachedSiteTimezone = 'Asia/Dhaka';
+  }
+
+  timezoneLoadedAt = now;
+  return cachedSiteTimezone;
+}
+
+/** MySQL datetime in panel local timezone (not UTC). */
 function nowSql() {
-  return new Date().toISOString().slice(0, 19).replace('T', ' ');
+  const tz = cachedSiteTimezone || process.env.SITE_TIMEZONE || 'Asia/Dhaka';
+  return new Date().toLocaleString('sv-SE', { timeZone: tz }).slice(0, 19);
 }
 
 function nowOrderCreate() {
@@ -162,6 +191,7 @@ async function clientPrice(serviceId, clientId) {
 
 module.exports = {
   withCronLock,
+  refreshSiteTimezone,
   nowSql,
   nowOrderCreate,
   getSettings,

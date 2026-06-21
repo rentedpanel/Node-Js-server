@@ -79,6 +79,7 @@ app.use((req, res, next) => {
     verify_payment: { path: '/payments/verify', method: 'POST' },
     add_funds: { path: '/payments/deposit', method: 'POST' },
     app_config: { path: '/support/config', method: 'GET' },
+    app_version: { path: '/app-version', method: 'GET' },
     faq: { path: '/support/faq', method: 'GET' },
     terms: { path: '/support/terms', method: 'GET' },
     privacy_policy: { path: '/support/privacy', method: 'GET' },
@@ -123,6 +124,7 @@ app.use((req, res, next) => {
 
 // 5. Serve Static files directory (for uploaded profile pictures)
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+app.use('/downloads', express.static(path.join(__dirname, 'downloads')));
 
 // Database connection health shield middleware
 app.use((req, res, next) => {

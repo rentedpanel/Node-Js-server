@@ -16,6 +16,7 @@ const paymentCtrl = require('../controllers/paymentController');
 const profileCtrl = require('../controllers/profileController');
 const supportCtrl = require('../controllers/supportController');
 const currencyCtrl = require('../controllers/currencyController');
+const appVersionCtrl = require('../controllers/appVersionController');
 
 // 1. Strict mobile client validation checking (ALL routes must match X-App-Secret)
 // router.use(secretCheck);
@@ -38,6 +39,7 @@ router.get('/support/faq', supportCtrl.getFaqs);
 router.get('/support/terms', supportCtrl.getTerms);
 router.get('/support/privacy', supportCtrl.getPrivacy);
 router.get('/support/contact', supportCtrl.submitContact);
+router.get('/app-version', appVersionCtrl.getLatestVersion);
 
 // ============================================
 // Authenticated App Area (Requires Bearer API Token)

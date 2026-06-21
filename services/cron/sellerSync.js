@@ -2,7 +2,7 @@ const db = require('../../config/db');
 const cache = require('../../config/cache');
 const logger = require('../../config/logger');
 const { fetchServicesList, lookupGroupedService } = require('./providerApi');
-const { nowSql, getSettings, groupCurrenciesByCode, fromTo } = require('./cronHelpers');
+const { nowSql, refreshSiteTimezone, getSettings, groupCurrenciesByCode, fromTo } = require('./cronHelpers');
 
 function formatAmountString(currency, amount) {
   return `${currency} ${parseFloat(amount).toFixed(4)}`;
@@ -144,6 +144,7 @@ async function runSellerSync() {
     const connection = await db.pool.getConnection();
     try {
       await connection.beginTransaction();
+      await refreshSiteTimezone();
       const dateNow = nowSql();
       const defaultLang = await getDefaultLanguageCode(connection);
       const pendingCategoryUpdates = new Map();

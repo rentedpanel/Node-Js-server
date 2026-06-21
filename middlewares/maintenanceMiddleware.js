@@ -8,7 +8,12 @@ const logger = require('../config/logger');
 async function maintenanceMiddleware(req, res, next) {
   try {
     // If the path matches config route, bypass maintenance check
-    if (req.path === '/support/config' || req.path === '/api/v2/support/config') {
+    if (
+      req.path === '/support/config' ||
+      req.path === '/api/v2/support/config' ||
+      req.path === '/app-version' ||
+      req.path === '/api/v2/app-version'
+    ) {
       return next();
     }
     

@@ -90,6 +90,111 @@ async function getCurrenciesMap() {
   return map;
 }
 
+// Same keyword → Font Awesome mapping as smmpanel admin "Auto Category Icons"
+const AUTO_ICON_MAP = {
+  instagram: 'fab fa-instagram', ig: 'fab fa-instagram', ins: 'fab fa-instagram',
+  youtube: 'fab fa-youtube', yt: 'fab fa-youtube', you: 'fab fa-youtube',
+  facebook: 'fab fa-facebook-square', fb: 'fab fa-facebook-square',
+  x: 'fas fa-x', 'x-twitter': 'fas fa-x',
+  website: 'fas fa-globe', web: 'fas fa-globe',
+  twitter: 'fab fa-twitter', tw: 'fab fa-twitter',
+  whatsapp: 'fab fa-whatsapp', wp: 'fab fa-whatsapp',
+  telegram: 'fab fa-telegram-plane', tg: 'fab fa-telegram-plane',
+  subscription: 'fas fa-bell', indian: 'fas fa-flag',
+  spotify: 'fab fa-spotify',
+  virtual: 'fas fa-vr-cardboard',
+  playstore: 'fab fa-google-play',
+  snapchat: 'fab fa-snapchat-ghost',
+  api: 'fas fa-code',
+  tiktok: 'fab fa-tiktok',
+  threads: 'fab fa-threads',
+  prime: 'fas fa-gem',
+  new: 'fas fa-bolt',
+  linkedin: 'fab fa-linkedin',
+  discord: 'fab fa-discord',
+};
+
+function autoIconClassFromName(name) {
+  const lower = String(name || '').toLowerCase();
+  for (const [keyword, iconClass] of Object.entries(AUTO_ICON_MAP)) {
+    if (lower.includes(keyword)) return iconClass;
+  }
+  return 'fas fa-star';
+}
+
+async function getFilesMap() {
+  const cached = cache.get('files_map');
+  if (cached) return cached;
+
+  const rows = await db.query('SELECT id, link FROM files');
+  const map = {};
+  for (const row of rows) {
+    map[parseInt(row.id, 10)] = row;
+  }
+  cache.set('files_map', map, 600);
+  return map;
+}
+
+function parseStoredIcon(rawIcon, filesMap) {
+  let parsed = {};
+  try {
+    parsed = typeof rawIcon === 'string' ? JSON.parse(rawIcon) : (rawIcon || {});
+  } catch (e) {
+    parsed = {};
+  }
+
+  const iconType = parsed.icon_type || '';
+  if (iconType === 'none') {
+    return {
+      icon_type: 'none',
+      icon_class: '',
+      image_url: '',
+    };
+  }
+  if (iconType === 'image') {
+    const imageId = parseInt(parsed.image_id, 10);
+    const file = filesMap[imageId];
+    return {
+      icon_type: 'image',
+      icon_class: '',
+      image_url: file?.link ? String(file.link) : '',
+    };
+  }
+  if (iconType === 'icon' && parsed.icon_class) {
+    return {
+      icon_type: 'icon',
+      icon_class: String(parsed.icon_class),
+      image_url: '',
+    };
+  }
+  return null;
+}
+
+function resolveCategoryIcon(rawIcon, filesMap, categoryName) {
+  const stored = parseStoredIcon(rawIcon, filesMap);
+  if (stored) return stored;
+  return {
+    icon_type: 'icon',
+    icon_class: autoIconClassFromName(categoryName),
+    image_url: '',
+  };
+}
+
+function resolveServiceIcon(serviceName) {
+  return {
+    icon_type: 'icon',
+    icon_class: autoIconClassFromName(serviceName),
+    image_url: '',
+  };
+}
+
+function serviceHasRefill(srv, serviceName) {
+  if (String(srv.show_refill || '').toLowerCase() === 'true') return true;
+  const days = parseInt(srv.refill_days || '0', 10);
+  if (days > 0) return true;
+  return String(serviceName || '').toLowerCase().includes('refill');
+}
+
 // Global cached categories and services fetcher
 async function getCachedGlobalCatalog() {
   const cached = cache.get('global_catalog');
@@ -119,6 +224,7 @@ class ServiceController {
       
       // Load cache/data
       const { categories, services } = await getCachedGlobalCatalog();
+      const filesMap = await getFilesMap();
       const currenciesMap = await getCurrenciesMap();
       
       const settingsRows = await db.query('SELECT * FROM settings WHERE id = 1 LIMIT 1');
@@ -216,7 +322,8 @@ class ServiceController {
             start_time: srv.serviceStart ? srv.serviceStart : '-',
             speed: speed ? speed : '-',
             guarantee: srv.refill_days ? `${srv.refill_days} day` : '-',
-            average_time: srv.time ? srv.time : '-'
+            average_time: srv.time ? srv.time : '-',
+            has_refill: serviceHasRefill(srv, serviceName),
           });
         }
         
@@ -229,11 +336,16 @@ class ServiceController {
             }
           } catch (e) {}
 
+          const categoryIcon = resolveCategoryIcon(cat.category_icon, filesMap, categoryName);
+
           responseCategories.push({
             category_id: catId,
             category_name: categoryName,
-            category_icon: cat.category_icon || '',
-            services: categoryServices
+            category_icon: categoryIcon,
+            services: categoryServices.map((svc) => ({
+              ...svc,
+              service_icon: resolveServiceIcon(svc.service_name),
+            })),
           });
         }
       }

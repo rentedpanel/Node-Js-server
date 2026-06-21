@@ -1,5 +1,5 @@
 const logger = require('../config/logger');
-const { withCronLock } = require('./cron/cronHelpers');
+const { withCronLock, refreshSiteTimezone } = require('./cron/cronHelpers');
 const { runOrdersSync } = require('./cron/ordersSync');
 const { runDripfeedSync } = require('./cron/dripfeedSync');
 const { runAutolikeSync } = require('./cron/autolikeSync');
@@ -35,6 +35,7 @@ async function runJob(job) {
 }
 
 async function tick() {
+  await refreshSiteTimezone();
   for (const job of JOBS) {
     try {
       await runJob(job);
@@ -44,8 +45,9 @@ async function tick() {
   }
 }
 
-function init() {
-  logger.info('[CRON_SERVICE] Node.js cron engine initialized (replaces PHP module/run).');
+async function init() {
+  const tz = await refreshSiteTimezone(true);
+  logger.info(`[CRON_SERVICE] Node.js cron engine initialized (timezone: ${tz}).`);
   tick();
   setInterval(tick, 30000);
 }
