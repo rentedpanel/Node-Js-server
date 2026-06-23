@@ -1,5 +1,8 @@
 const db = require('../config/db');
 const cache = require('../config/cache');
+const fs = require('fs');
+const path = require('path');
+const crypto = require('crypto');
 
 // Helper to check the number of active pending tickets (matching PHP open_ticket)
 async function getOpenTicketCount(clientId) {
@@ -365,6 +368,102 @@ class SupportController {
       next(error);
     } finally {
       connection.release();
+    }
+  }
+
+  // POST /support/bug-report
+  async submitBugReport(req, res, next) {
+    try {
+      const user = req.user;
+      const category = (req.body.category || 'report_bug').trim();
+      const message = (req.body.message || '').trim();
+      const email = (req.body.email || user.email || '').trim();
+      const imagesInput = req.body.images || [];
+      const allowedCategories = ['report_bug', 'suggestion', 'other'];
+
+      if (!allowedCategories.includes(category)) {
+        return res.status(400).json({ error: 'Invalid report category' });
+      }
+      if (!message) {
+        return res.status(400).json({ error: 'Please describe your issue or feedback' });
+      }
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        return res.status(400).json({ error: 'A valid email address is required' });
+      }
+
+      const images = Array.isArray(imagesInput) ? imagesInput : [];
+      if (images.length > 5) {
+        return res.status(400).json({ error: 'You can upload a maximum of 5 images' });
+      }
+
+      const savedImageUrls = [];
+      const uploadDir = path.join(__dirname, '..', 'uploads', 'bug_reports');
+      if (!fs.existsSync(uploadDir)) {
+        fs.mkdirSync(uploadDir, { recursive: true });
+      }
+
+      const protocol = req.get('x-forwarded-proto') || req.protocol || 'https';
+
+      for (let i = 0; i < images.length; i++) {
+        const raw = String(images[i] || '').trim();
+        if (!raw) continue;
+
+        const match = raw.match(/^data:image\/(png|jpeg|jpg);base64,(.+)$/i);
+        const base64Data = match ? match[2] : raw;
+        const ext = match ? (match[1].toLowerCase() === 'png' ? 'png' : 'jpg') : 'jpg';
+
+        const buffer = Buffer.from(base64Data, 'base64');
+        if (buffer.length > 1024 * 1024) {
+          return res.status(400).json({ error: 'Each image must be 1MB or smaller' });
+        }
+
+        const fileName = `bug_${user.client_id}_${Date.now()}_${i}_${crypto.randomBytes(4).toString('hex')}.${ext}`;
+        const destPath = path.join(uploadDir, fileName);
+        fs.writeFileSync(destPath, buffer);
+        savedImageUrls.push(`${protocol}://${req.get('host')}/uploads/bug_reports/${fileName}`);
+      }
+
+      const platform = (req.body.platform || 'mobile_app').trim();
+      const appVersion = (req.body.app_version || '').trim() || null;
+      const deviceParts = [];
+      if (appVersion) deviceParts.push(`App v${appVersion}`);
+      if (req.body.device_os) deviceParts.push(req.body.device_os);
+      if (req.body.device_model) deviceParts.push(req.body.device_model);
+      const deviceInfo = deviceParts.length ? deviceParts.join(' | ') : null;
+
+      const now = new Date();
+      const formattedDate = now.toISOString().slice(0, 19).replace('T', ' ');
+      const ip = getIP(req);
+
+      const [result] = await db.pool.execute(
+        `INSERT INTO app_bug_reports
+          (client_id, category, message, email, images, platform, device_info, app_version, status, report_ip, created_at)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, 'pending', ?, ?)`,
+        [
+          user.client_id,
+          category,
+          message,
+          email,
+          savedImageUrls.length ? JSON.stringify(savedImageUrls) : null,
+          platform,
+          deviceInfo,
+          appVersion,
+          ip,
+          formattedDate
+        ]
+      );
+
+      await db.query(
+        'INSERT INTO client_report (client_id, action, report_ip, report_platform, device_info, report_date) VALUES (?, ?, ?, ?, ?, ?)',
+        [user.client_id, `Bug/feedback report submitted. ID: #${result.insertId}`, ip, platform, deviceInfo, formattedDate]
+      );
+
+      return res.status(200).json({
+        message: 'Your report has been submitted successfully. Thank you!',
+        report_id: parseInt(result.insertId)
+      });
+    } catch (error) {
+      next(error);
     }
   }
 }

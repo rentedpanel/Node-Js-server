@@ -35,6 +35,32 @@ function getIP(req) {
   return req.socket.remoteAddress || '127.0.0.1';
 }
 
+function getDeviceInfo(req) {
+  const parts = [];
+  if (req.body.app_version) parts.push(`App v${req.body.app_version}`);
+  if (req.body.device_os) parts.push(req.body.device_os);
+  if (req.body.device_model) parts.push(req.body.device_model);
+  return parts.length ? parts.join(' | ') : null;
+}
+
+async function logMobileLogin(user, req, actionText) {
+  const ip = getIP(req);
+  const now = new Date();
+  const formattedDate = now.toISOString().slice(0, 19).replace('T', ' ');
+  const platform = (req.body.platform || 'mobile_app').trim();
+  const deviceInfo = getDeviceInfo(req);
+
+  await db.query(
+    'INSERT INTO client_report (client_id, action, report_ip, report_platform, device_info, report_date) VALUES (?, ?, ?, ?, ?, ?)',
+    [user.client_id, actionText, ip, platform, deviceInfo, formattedDate]
+  );
+
+  await db.query(
+    'UPDATE clients SET login_date = ?, login_ip = ?, last_login_platform = ?, last_device_info = ? WHERE client_id = ?',
+    [formattedDate.replace(/-/g, '.'), ip, platform, deviceInfo, user.client_id]
+  );
+}
+
 // Helper to validate username syntax
 function validateUsername(username) {
   return /^[a-zA-Z0-9_]{3,20}$/.test(username);
@@ -106,20 +132,7 @@ class AuthController {
         return res.status(403).json({ error: 'Your account is deactivated. Please contact support.' });
       }
       
-      const ip = getIP(req);
-      const now = new Date();
-      const formattedDate = now.toISOString().slice(0, 19).replace('T', ' ');
-      
-      // Log successful login (client_report and clients table)
-      await db.query(
-        'INSERT INTO client_report (client_id, action, report_ip, report_date) VALUES (?, ?, ?, ?)',
-        [user.client_id, 'Member logged in via Mobile API.', ip, formattedDate]
-      );
-      
-      await db.query(
-        'UPDATE clients SET login_date = ?, login_ip = ? WHERE client_id = ?',
-        [formattedDate.replace(/-/g, '.'), ip, user.client_id]
-      );
+      await logMobileLogin(user, req, 'Member logged in via Mobile App.');
       
       const fcmToken = (req.body.fcm_token || '').trim();
       if (fcmToken) {
@@ -335,15 +348,7 @@ class AuthController {
           return res.status(403).json({ error: 'Your account is deactivated. Please contact support.' });
         }
         
-        await db.query(
-          'INSERT INTO client_report (client_id, action, report_ip, report_date) VALUES (?, ?, ?, ?)',
-          [user.client_id, 'Member logged in via Google (Mobile API).', ip, formattedDate]
-        );
-        
-        await db.query(
-          'UPDATE clients SET login_date = ?, login_ip = ? WHERE client_id = ?',
-          [formattedDate.replace(/-/g, '.'), ip, user.client_id]
-        );
+        await logMobileLogin(user, req, 'Member logged in via Google (Mobile App).');
         
         const fcmToken = (req.body.fcm_token || '').trim();
         if (fcmToken) {
@@ -390,10 +395,13 @@ class AuthController {
           await connection.execute('UPDATE clients SET fcm_token = ? WHERE client_id = ?', [fcmToken, clientId]);
         }
         
+        const platform = (req.body.platform || 'mobile_app').trim();
+        const deviceInfo = getDeviceInfo(req);
+
         // Log registration report
         await connection.execute(
-          'INSERT INTO client_report (client_id, action, report_ip, report_date) VALUES (?, ?, ?, ?)',
-          [clientId, 'User registered via Google (Mobile API).', ip, formattedDate]
+          'INSERT INTO client_report (client_id, action, report_ip, report_platform, device_info, report_date) VALUES (?, ?, ?, ?, ?, ?)',
+          [clientId, 'User registered via Google (Mobile App).', ip, platform, deviceInfo, formattedDate]
         );
         
         // Register Referral mapping

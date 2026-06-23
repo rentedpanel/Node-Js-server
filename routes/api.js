@@ -74,5 +74,6 @@ router.get('/support/tickets', supportCtrl.getTickets);
 router.post('/support/tickets', validateRequest('createTicket'), supportCtrl.createTicket);
 router.get('/support/tickets/:id', supportCtrl.getMessages);
 router.post('/support/tickets/:id/reply', validateRequest('replyTicket'), supportCtrl.replyTicket);
+router.post('/support/bug-report', validateRequest('submitBugReport'), supportCtrl.submitBugReport);
 
 module.exports = router;

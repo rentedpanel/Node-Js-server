@@ -124,6 +124,17 @@ const schemas = {
       'any.required': 'Message is required'
     })
   }),
+  submitBugReport: Joi.object({
+    category: Joi.string().valid('report_bug', 'suggestion', 'other').default('report_bug'),
+    message: Joi.string().required().messages({
+      'any.required': 'Description is required'
+    }),
+    email: Joi.string().email().required().messages({
+      'any.required': 'Email is required',
+      'string.email': 'A valid email address is required'
+    }),
+    images: Joi.array().items(Joi.string()).max(5).default([])
+  }),
   changeCurrency: Joi.object({
     currency_code: Joi.string().min(2).max(10),
     rate_key: Joi.string().min(2).max(10),
