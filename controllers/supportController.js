@@ -50,6 +50,19 @@ class SupportController {
         server_maintenance_mode: parseInt(settings.site_maintenance) === 1,
         google_client_id: settings.google_client_id || '',
         google_login_enabled: googleLoginEnabled,
+        chat_buttons: {
+          whatsapp: {
+            enabled: parseInt(settings.whatsappbutton) === 1,
+            position: settings.whatsappposition || 'right',
+            number: settings.whatsappnumber || '',
+            message: settings.whatsappcolour || ''
+          },
+          telegram: {
+            enabled: parseInt(settings.telegrambutton) === 1,
+            position: settings.telegramposition || 'left',
+            username: (settings.telegramusername || '').replace(/^@/, '')
+          }
+        },
         registration_fields: {
           name: parseInt(settings.name_fileds) === 1,
           phone: parseInt(settings.skype_feilds) === 2,
@@ -197,16 +210,59 @@ class SupportController {
     }
   }
   
+  // GET /support/ticket-subjects
+  async getTicketSubjects(req, res, next) {
+    try {
+      const rows = await db.query(
+        `SELECT subject_id, subject, extra_field_label, extra_field_placeholder, extra_field_required
+         FROM ticket_subjects ORDER BY subject_id ASC`
+      );
+
+      const subjects = (rows || []).map((row) => ({
+        id: parseInt(row.subject_id),
+        subject: row.subject,
+        extra_field_label: row.extra_field_label || '',
+        extra_field_placeholder: row.extra_field_placeholder || '',
+        extra_field_required: parseInt(row.extra_field_required || 0) === 1
+      }));
+
+      return res.status(200).json({ subjects });
+    } catch (error) {
+      next(error);
+    }
+  }
+
   // POST /support/tickets
   async createTicket(req, res, next) {
     const connection = await db.pool.getConnection();
     try {
       const user = req.user;
-      const subject = (req.body.subject || '').trim();
-      const message = (req.body.message || '').trim();
-      
+      const subjectId = parseInt(req.body.subject_id || 0);
+      let subject = (req.body.subject || '').trim();
+      const extraField = (req.body.extra_field || '').trim();
+      let message = (req.body.message || '').trim();
+
+      let subjectRow = null;
+      if (subjectId > 0) {
+        const rows = await db.query('SELECT * FROM ticket_subjects WHERE subject_id = ? LIMIT 1', [subjectId]);
+        subjectRow = rows && rows[0] ? rows[0] : null;
+        if (subjectRow) subject = subjectRow.subject;
+      } else if (subject) {
+        const rows = await db.query('SELECT * FROM ticket_subjects WHERE subject = ? LIMIT 1', [subject]);
+        subjectRow = rows && rows[0] ? rows[0] : null;
+      }
+
       if (!subject || !message) {
         return res.status(400).json({ error: 'Subject and message are required' });
+      }
+
+      if (subjectRow && subjectRow.extra_field_label) {
+        if (parseInt(subjectRow.extra_field_required) === 1 && !extraField) {
+          return res.status(400).json({ error: `${subjectRow.extra_field_label} is required for this subject` });
+        }
+        if (extraField) {
+          message = `${subjectRow.extra_field_label}: ${extraField}\n\n${message}`;
+        }
       }
       
       // Load user ticket limit constraint

@@ -85,6 +85,7 @@ app.use((req, res, next) => {
     privacy_policy: { path: '/support/privacy', method: 'GET' },
     contact: { path: '/support/contact', method: 'GET' },
     tickets: { path: '/support/tickets', method: 'GET' },
+    ticket_subjects: { path: '/support/ticket-subjects', method: 'GET' },
     create_ticket: { path: '/support/tickets', method: 'POST' },
     submit_bug_report: { path: '/support/bug-report', method: 'POST' }
   };

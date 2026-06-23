@@ -112,12 +112,14 @@ const schemas = {
     })
   }),
   createTicket: Joi.object({
-    subject: Joi.string().required().messages({
-      'any.required': 'Subject is required'
-    }),
+    subject: Joi.string().allow(''),
+    subject_id: Joi.number().integer().min(1).optional(),
+    extra_field: Joi.string().allow('').default(''),
     message: Joi.string().required().messages({
       'any.required': 'Message is required'
     })
+  }).or('subject', 'subject_id').messages({
+    'object.missing': 'Subject is required'
   }),
   replyTicket: Joi.object({
     message: Joi.string().required().messages({

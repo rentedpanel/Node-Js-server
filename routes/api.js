@@ -70,6 +70,7 @@ router.get('/currencies', currencyCtrl.getCurrencies);
 router.post('/profile/currency', validateRequest('changeCurrency'), currencyCtrl.changeCurrency);
 
 // Ticket Support logs and conversations
+router.get('/support/ticket-subjects', supportCtrl.getTicketSubjects);
 router.get('/support/tickets', supportCtrl.getTickets);
 router.post('/support/tickets', validateRequest('createTicket'), supportCtrl.createTicket);
 router.get('/support/tickets/:id', supportCtrl.getMessages);
