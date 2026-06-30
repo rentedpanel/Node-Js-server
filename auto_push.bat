@@ -1,71 +1,109 @@
 @echo off
+setlocal EnableExtensions
 chcp 65001 > nul
+cd /d "%~dp0"
+
+set "SCRIPT_VER=2.1"
 
 :menu
 cls
 echo ====================================================
 echo        Git Helper Script (SMMTor Node Server)
+echo        Version %SCRIPT_VER%
 echo ====================================================
 echo.
-echo Select an option:
-echo [1] Push updates to GitHub (Add, Commit, Pull, Push)
-echo [2] Pull latest updates from GitHub (Pull only)
-echo [3] Exit
+echo   1. Push my updates to GitHub
+echo   2. Sync from GitHub (replace local with online)
+echo   3. Exit
 echo.
-set /p choice="Enter your choice (1, 2 or 3, default is 1): "
+set "choice="
+set /p choice="Enter choice (1-3, default 1): "
 
 if "%choice%"=="2" goto pull_only
 if "%choice%"=="3" goto exit_script
-goto push_flow
+if "%choice%"=="" goto push_flow
+if "%choice%"=="1" goto push_flow
+echo Invalid choice.
+pause > nul
+goto menu
 
 :push_flow
 echo.
 echo ====================================================
-echo              Option 1: Push Updates
+echo   Option 1: Push Updates
 echo ====================================================
-:: Automatically configure Git with correct credentials
 git config user.email "rx94711485@gmail.com"
 git config user.name "Sajala"
 
-:: Ask the user to type "ok" or a commit message
-set /p commit_msg="Type 'ok' or commit message and press Enter: "
-
-:: If the user just presses Enter without typing, set default
-if "%commit_msg%"=="" set commit_msg=Auto update
+set "commit_msg="
+set /p commit_msg="Commit message (Enter = Auto update): "
+if "%commit_msg%"=="" set "commit_msg=Auto update"
 
 echo.
-echo [1/4] Adding files to Git...
+echo Step 1 of 4 - Adding files...
 git add .
+if errorlevel 1 goto git_error
 
-echo.
-echo [2/4] Committing with message: "%commit_msg%"
+echo Step 2 of 4 - Committing...
 git commit -m "%commit_msg%"
 
-echo.
-echo [3/4] Pulling latest changes from online (Syncing)...
+echo Step 3 of 4 - Pulling from GitHub...
 git pull origin main --no-rebase
+if errorlevel 1 goto git_error
+
+echo Step 4 of 4 - Pushing to GitHub...
+git push origin main
+if errorlevel 1 goto git_error
 
 echo.
-echo [4/4] Pushing to GitHub (origin main)...
-git push origin main
+echo Push completed successfully.
 goto end
 
 :pull_only
 echo.
 echo ====================================================
-echo              Option 2: Pull Updates
+echo   Option 2: Sync from GitHub
+echo   Script version %SCRIPT_VER%
 echo ====================================================
-echo Pulling latest updates from GitHub...
-git pull origin main
+echo.
+echo Local files will match GitHub exactly.
+echo WARNING: Uncommitted local changes will be lost.
+echo.
+set "confirm="
+set /p confirm="Type Y to continue: "
+if /i not "%confirm%"=="Y" (
+    echo Cancelled.
+    goto end
+)
+
+echo.
+echo Step 1 of 3 - Fetching from GitHub...
+git fetch origin
+if errorlevel 1 goto git_error
+
+echo.
+echo Step 2 of 3 - Replacing local files...
+git reset --hard origin/main
+if errorlevel 1 goto git_error
+
+echo.
+echo Step 3 of 3 - Status check...
+git status
+
+echo.
+echo Sync completed successfully.
+goto end
+
+:git_error
+echo.
+echo ERROR: Git command failed. Check internet, branch, and git login.
 goto end
 
 :end
 echo.
-echo ====================================================
-echo    Done! Press any key to return to menu.
-echo ====================================================
-pause
+pause > nul
 goto menu
 
 :exit_script
-exit
+endlocal
+exit /b 0

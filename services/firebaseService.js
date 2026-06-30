@@ -57,6 +57,49 @@ async function sendPushNotification(target, title, body, data = {}) {
   }
 }
 
+/**
+ * Sends a silent data-only FCM message (no system notification banner).
+ * @param {string} target - Topic name or device token
+ * @param {object} data - Custom key-value payload (values coerced to strings)
+ */
+async function sendDataMessage(target, data = {}) {
+  const payload = Object.fromEntries(
+    Object.entries(data).map(([key, value]) => [key, String(value ?? '')])
+  );
+
+  if (!isInitialized) {
+    logger.info(`[FIREBASE MOCK] Data message to "${target}":`, payload);
+    return null;
+  }
+
+  const message = {
+    data: payload,
+    android: { priority: 'high' },
+  };
+
+  if (
+    target === 'all' ||
+    target === 'app_updates' ||
+    target.startsWith('/topics/') ||
+    target.startsWith('topic_') ||
+    target.startsWith('client_')
+  ) {
+    message.topic = target.replace('/topics/', '').replace('topic_', '');
+  } else {
+    message.token = target;
+  }
+
+  try {
+    const response = await admin.messaging().send(message);
+    logger.info('[FIREBASE] Data message sent successfully: ' + response);
+    return response;
+  } catch (error) {
+    logger.error('[FIREBASE] FCM data message failed: ' + error.message);
+    return null;
+  }
+}
+
 module.exports = {
-  sendPushNotification
+  sendPushNotification,
+  sendDataMessage,
 };

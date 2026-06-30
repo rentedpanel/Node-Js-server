@@ -1,5 +1,6 @@
 const db = require('../config/db');
 const logger = require('../config/logger');
+const { sendDataMessage } = require('../services/firebaseService');
 
 let tableReady = false;
 
@@ -21,41 +22,37 @@ async function ensureAppUpdatesTable() {
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
   `);
 
-  const countRows = await db.query('SELECT COUNT(*) AS total FROM app_updates');
-  const total = parseInt(countRows[0]?.total || 0, 10);
-
-  if (total === 0) {
-    const siteBase = (process.env.SITE_URL || 'https://smmtor.com').replace(/\/$/, '');
-    const defaultApk =
-      process.env.APP_UPDATE_APK_URL ||
-      `${siteBase}/downloads/smmtor-latest.apk`;
-
-    await db.query(
-      `INSERT INTO app_updates
-        (version_name, build_number, apk_url, is_mandatory, release_notes, is_active)
-       VALUES (?, ?, ?, ?, ?, 1)`,
-      [
-        '1.0.1',
-        2,
-        defaultApk,
-        0,
-        'Test release — bump build_number on server to verify in-app updates.',
-      ]
-    );
-    logger.info('[APP_VERSION] Seeded default app_updates row (1.0.1 / build 2).');
-  }
-
   tableReady = true;
 }
 
+function buildEmptyVersionPayload() {
+  return {
+    version_name: '1.0.0',
+    build_number: 1,
+    apk_url: '',
+    is_mandatory: false,
+    release_notes: '',
+  };
+}
+
+function mapVersionRow(row) {
+  return {
+    version_name: row.version_name,
+    build_number: parseInt(row.build_number, 10) || 0,
+    apk_url: row.apk_url || '',
+    is_mandatory: parseInt(row.is_mandatory, 10) === 1,
+    release_notes: row.release_notes || '',
+  };
+}
+
 class AppVersionController {
-  /** GET /app-version — public, no auth */
+  /** GET /app-version — public, no auth. Reads shared app_updates table (same DB as admin panel). */
   async getLatestVersion(req, res, next) {
     try {
       await ensureAppUpdatesTable();
 
       const rows = await db.query(
-        `SELECT version_name, build_number, apk_url, is_mandatory, release_notes
+        `SELECT version_name, build_number, apk_url, is_mandatory, release_notes, created_at
          FROM app_updates
          WHERE is_active = 1
          ORDER BY build_number DESC
@@ -63,22 +60,52 @@ class AppVersionController {
       );
 
       if (!rows?.length) {
-        return res.status(200).json({
-          version_name: '1.0.0',
-          build_number: 1,
-          apk_url: '',
-          is_mandatory: 0,
-          release_notes: '',
-        });
+        logger.info('[APP_VERSION] No active release in app_updates table.');
+        return res.status(200).json(buildEmptyVersionPayload());
       }
 
-      const row = rows[0];
+      const payload = mapVersionRow(rows[0]);
+      logger.info(
+        `[APP_VERSION] Serving active release ${payload.version_name} (build ${payload.build_number})`
+      );
+      return res.status(200).json(payload);
+    } catch (error) {
+      next(error);
+    }
+  }
+
+  /** POST /app-version/broadcast — internal, triggers live update check on all Android apps. */
+  async broadcastUpdate(req, res, next) {
+    try {
+      await ensureAppUpdatesTable();
+
+      const rows = await db.query(
+        `SELECT version_name, build_number
+         FROM app_updates
+         WHERE is_active = 1
+         ORDER BY build_number DESC
+         LIMIT 1`
+      );
+
+      const version = rows?.length ? rows[0] : null;
+      const buildNumber = version ? parseInt(version.build_number, 10) || 0 : 0;
+      const versionName = version?.version_name || '';
+
+      await sendDataMessage('app_updates', {
+        type: 'app_update',
+        build_number: String(buildNumber),
+        version_name: versionName,
+      });
+
+      logger.info(
+        `[APP_VERSION] Broadcast sent for ${versionName} (build ${buildNumber})`
+      );
+
       return res.status(200).json({
-        version_name: row.version_name,
-        build_number: parseInt(row.build_number, 10),
-        apk_url: row.apk_url,
-        is_mandatory: parseInt(row.is_mandatory, 10) === 1,
-        release_notes: row.release_notes || '',
+        status: 'success',
+        message: 'App update broadcast sent.',
+        build_number: buildNumber,
+        version_name: versionName,
       });
     } catch (error) {
       next(error);

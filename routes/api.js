@@ -40,6 +40,7 @@ router.get('/support/terms', supportCtrl.getTerms);
 router.get('/support/privacy', supportCtrl.getPrivacy);
 router.get('/support/contact', supportCtrl.submitContact);
 router.get('/app-version', appVersionCtrl.getLatestVersion);
+router.post('/app-version/broadcast', secretCheck, appVersionCtrl.broadcastUpdate);
 
 // ============================================
 // Authenticated App Area (Requires Bearer API Token)

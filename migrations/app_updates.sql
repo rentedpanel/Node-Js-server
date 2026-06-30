@@ -1,4 +1,4 @@
--- Self-hosted in-app update metadata (used by GET /api/v2/app-version)
+-- Shared app_updates table (admin panel writes, Node API reads for mobile app)
 CREATE TABLE IF NOT EXISTS `app_updates` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `version_name` varchar(32) NOT NULL,
